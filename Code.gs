@@ -1,5 +1,5 @@
 var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-var cal = CalendarApp.getCalendarById("matheus.pena@ilegra.com");
+var cal = CalendarApp.getCalendarById("");
 var event = cal.getEvents(new Date("2/6/2018 02:07 PM"), new Date("2/28/2018 11:59 PM"));
 
 function getEvents() {  

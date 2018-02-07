@@ -1,7 +1,7 @@
 var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 var email = Session.getActiveUser().getEmail();
-var cal = CalendarApp.getCalendarById(email);
-var event = cal.getEvents(new Date("2/6/2018 02:07 PM"), new Date("2/28/2018 11:59 PM"));
+var calendar = CalendarApp.getCalendarById(email);
+var event = calendar.getEvents(new Date("2/6/2018 02:07 PM"), new Date("2/28/2018 11:59 PM"));
 var lastRow = sheet.getLastRow();
 
 function clearSheet(){
@@ -23,4 +23,9 @@ function getEvents() {
     sheet.getRange(i+2,3).setNumberFormat("dd/mm/yy h:mm:ss AM/PM");
     sheet.getRange(i+2,4).setValue(description);
   }
+}
+
+function addEvent(){
+  var data = sheet.getRange("A2:D"+lastRow).getValues();
+  Logger.log(data);
 }

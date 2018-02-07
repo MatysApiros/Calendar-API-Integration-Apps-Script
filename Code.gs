@@ -2,6 +2,11 @@ var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 var email = Session.getActiveUser().getEmail();
 var cal = CalendarApp.getCalendarById(email);
 var event = cal.getEvents(new Date("2/6/2018 02:07 PM"), new Date("2/28/2018 11:59 PM"));
+var lastRow = sheet.getLastRow();
+
+function clearSheet(){
+  sheet.getRange(2,1,lastRow-1,4).clearContent();
+}
 
 function getEvents() {  
   for(var i = 0; i < event.length; i++) {

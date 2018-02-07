@@ -27,5 +27,7 @@ function getEvents() {
 
 function addEvent(){
   var data = sheet.getRange("A2:D"+lastRow).getValues();
-  Logger.log(data);
+  for(var i = 0; i < data.length; i++){
+    calendar.createEvent(data[i][0], data[i][1], data[i][2], {location: "", description: data[i][3]});
+  }
 }

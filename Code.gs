@@ -12,7 +12,9 @@ function getEvents() {
     
     sheet.getRange(i+2,1).setValue(title);
     sheet.getRange(i+2,2).setValue(starDate);
+    sheet.getRange(i+2,2).setNumberFormat("dd/mm/yy h:mm:ss AM/PM");
     sheet.getRange(i+2,3).setValue(endDate);
+    sheet.getRange(i+2,3).setNumberFormat("dd/mm/yy h:mm:ss AM/PM");
     sheet.getRange(i+2,4).setValue(description);
   }
 }
